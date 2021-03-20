@@ -104,11 +104,21 @@ def main():
     print('Best fitness            :', count_fitness(population[result_index]))
     print('Decoded Value           :', decode_chromosome(population[result_index]))
 
+    # Test 1
     # Result: 
     # Best Chromosome         : [1, 0, 1, 0, 1, 1, 1, 1]
     # Best fitness            : 2.2798718011868155
     # Decoded Value           : [0.9166666666666665, 0.9374999999999998]
 
+    # Test 2
+    # Best Chromosome         : [1, 0, 1, 0, 1, 1, 1, 1]
+    # Best fitness            : 2.2798718011868155
+    # Decoded Value           : [0.9166666666666665, 0.9374999999999998]
+
+    #Test 3
+    # Best Chromosome         : [1, 0, 1, 0, 1, 1, 1, 1]
+    # Best fitness            : 2.2798718011868155
+    # Decoded Value           : [0.9166666666666665, 0.9374999999999998]
 
 main()
 
