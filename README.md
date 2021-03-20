@@ -6,8 +6,7 @@ Analysis, design, and implementation of the Genetialgorithm (GA) algorithm into 
 * Bagas Tri Wibowo (130114051)
 * I Putu Bagus Erix Wijaya (1301190435)
 * Martin Hutapea (1301190380)  
-=======================================  
-IF-43-04
+IF-43-04  
 School of Computing, Telkom University  
 ### Result
 After after running three trials of the program. We got:
