@@ -66,23 +66,29 @@ def mutation(offspring, mut_prob):
     return offspring
 
 def elitisme(all_fit):
-    return all_fit.index(max(all_fit))
+    best_index = all_fit.index(max(all_fit))
+        
+    return best_index
 
 def main():
     # hyper paramaters
-    pop_size, tour_size, generation, recom_prob, mut_prob = (50, 10, 100, 0.7, 0.2)
+    pop_size, tour_size, generation, recom_prob, mut_prob, iteration = (10, 10, 100, 0.1, 0.05, 0)
 
     population = generate_population(pop_size)
 
     for _ in range(generation):
         fitness = evaluate(population, pop_size)
+        
+        # threshold
+        if (max(fitness) > 2.2):
+            break
+        
         new_population = []
 
         best_index = elitisme(fitness)
-        new_population.append(population[best_index])
+        new_population.extend([population[best_index], population[best_index]])
 
-
-        for  _ in range(0, pop_size, 2):
+        for  _ in range(0, pop_size-2, 2):
             parrent_a = tournament_selection(population, pop_size, tour_size)
             parrent_b = tournament_selection(population, pop_size, tour_size)
 
@@ -92,8 +98,9 @@ def main():
             copy_parrent_b = copy.deepcopy(parrent_b)
             offsprings = recombination(copy_parrent_a, copy_parrent_b, recom_prob)
             offsprings = mutation(offsprings, mut_prob)
-            new_population += offsprings
+            new_population.extend(offsprings)
         population = new_population
+        iteration+=1
     
     fitness = evaluate(population, pop_size)
     result_index = elitisme(fitness)
@@ -103,6 +110,7 @@ def main():
     print('Best Chromosome         :', population[result_index])
     print('Best fitness            :', count_fitness(population[result_index]))
     print('Decoded Value           :', decode_chromosome(population[result_index]))
+    print('Total Generation        :', iteration)
 
     # Test 1
     # Result: 
