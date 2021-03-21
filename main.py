@@ -26,7 +26,8 @@ def decode_chromosome(chrom):
     return [x, y]
 
 def objective_function(x, y):
-    return (math.cos(x**2) * math.cos(y**2)) + (x + y)
+    
+    return ((math.cos(x**2)) * (math.sin(y**2))) + (x + y)
 
 def count_fitness(chrom):
     decoded_value = decode_chromosome(chrom)
@@ -66,25 +67,29 @@ def mutation(offspring, mut_prob):
     return offspring
 
 def elitisme(all_fit):
+    copy_all_fit = copy.deepcopy(all_fit)
+    copy_all_fit.sort()
+
     best_index = all_fit.index(max(all_fit))
+    second_index = all_fit.index(copy_all_fit[-2])
         
-    return best_index
+    return [best_index, second_index]
 
 def main():
     # hyper paramaters
-    pop_size, tour_size, generation, recom_prob, mut_prob = (25, 5, 100, 0.6, 0.05)
+    pop_size, tour_size, generation, recom_prob, mut_prob = (40, 7, 100, 0.6, 0.05)
 
     iteration = 0
     population = generate_population(pop_size)
     fitness = evaluate(population, pop_size)
 
-    while(iteration < generation and max(fitness) < 2.26):
+    while(iteration < generation and max(fitness) < 2.3):
         fitness = evaluate(population, pop_size)
         
         new_population = []
 
         best_index = elitisme(fitness)
-        new_population.extend([population[best_index], population[best_index]])
+        new_population.extend([population[best_index[0]], population[best_index[1]]])
 
         for  _ in range(0, pop_size-2, 2):
             parrent_a = tournament_selection(population, pop_size, tour_size)
@@ -105,9 +110,9 @@ def main():
 
     print('The Result of Maximizing the Function:')
     print()
-    print('Best Chromosome         :', population[result_index])
-    print('Best fitness            :', count_fitness(population[result_index]))
-    print('Decoded Value           :', decode_chromosome(population[result_index]))
+    print('Best Chromosome         :', population[result_index[0]])
+    print('Best fitness            :', count_fitness(population[result_index[0]]))
+    print('Decoded Value           :', decode_chromosome(population[result_index[0]]))
     print('Total Generation        :', iteration)
 
     # Test 1
