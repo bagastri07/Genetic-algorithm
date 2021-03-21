@@ -72,16 +72,14 @@ def elitisme(all_fit):
 
 def main():
     # hyper paramaters
-    pop_size, tour_size, generation, recom_prob, mut_prob, iteration = (10, 10, 100, 0.1, 0.05, 0)
+    pop_size, tour_size, generation, recom_prob, mut_prob = (25, 5, 100, 0.6, 0.05)
 
+    iteration = 0
     population = generate_population(pop_size)
+    fitness = evaluate(population, pop_size)
 
-    for _ in range(generation):
+    while(iteration < generation and max(fitness) < 2.26):
         fitness = evaluate(population, pop_size)
-        
-        # threshold
-        if (max(fitness) > 2.2):
-            break
         
         new_population = []
 
@@ -113,20 +111,22 @@ def main():
     print('Total Generation        :', iteration)
 
     # Test 1
-    # Result: 
     # Best Chromosome         : [1, 0, 1, 0, 1, 1, 1, 1]
     # Best fitness            : 2.2798718011868155
     # Decoded Value           : [0.9166666666666665, 0.9374999999999998]
+    # Total Generation        : 2
 
     # Test 2
     # Best Chromosome         : [1, 0, 1, 0, 1, 1, 1, 1]
     # Best fitness            : 2.2798718011868155
     # Decoded Value           : [0.9166666666666665, 0.9374999999999998]
+    # Total Generation        : 4
 
-    #Test 3
-    # Best Chromosome         : [1, 0, 1, 0, 1, 1, 1, 1]
-    # Best fitness            : 2.2798718011868155
-    # Decoded Value           : [0.9166666666666665, 0.9374999999999998]
-
+    # Test 3
+    # Best Chromosome         : [1, 0, 1, 1, 1, 1, 1, 1]
+    # Best fitness            : 2.260035057580861
+    # Decoded Value           : [1.1083333333333334, 0.9374999999999998]
+    # Total Generation        : 55
+    
 main()
 
