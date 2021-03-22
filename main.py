@@ -6,7 +6,7 @@ def generate_chromosome(chrom_size):
     # empty array of choromosome
     chrom = []
     for _ in range(chrom_size):
-        chrom.append(random.randint(0, 1))
+        chrom.append(random.randint(0, 9))
     return chrom
 
 def generate_population(pop_size):
@@ -20,8 +20,8 @@ def decode_chromosome(chrom):
     x_max, x_min = (2, -1)
     y_max, y_min = (1, -1)
 
-    x = x_min + (x_max - x_min / (2**-1 + 2**-2 + 2**-3 + 2**-4)) * (chrom[0] * 2**-1 + chrom[1] * 2**-2 + chrom[2] * 2**-3 + chrom[3] * 2**-4)
-    y = y_min + (y_max - y_min / (2**-1 + 2**-2 + 2**-3 + 2**-4)) * (chrom[4] * 2**-1 + chrom[5] * 2**-2 + chrom[6] * 2**-3 + chrom[7] * 2**-4)
+    x = x_min + (x_max - x_min / (9 * (10**-1 + 10**-2 + 10**-3 + 10**-4))) * (chrom[0] * 10**-1 + chrom[1] * 10**-2 + chrom[2] * 10**-3 + chrom[3] * 10**-4)
+    y = y_min + (y_max - y_min / (9 * (10**-1 + 10**-2 + 10**-3 + 10**-4))) * (chrom[4] * 10**-1 + chrom[5] * 10**-2 + chrom[6] * 10**-3 + chrom[7] * 10**-4)
 
     return [x, y]
 
@@ -61,8 +61,8 @@ def recombination(parrent_a, parrent_b, recom_prob):
 def mutation(offsprings, mut_prob):
     random_value = random.uniform(0, 1)
     if (random_value < mut_prob):
-        offsprings[0][random.randint(0, 7)] = random.randint(0, 1)
-        offsprings[1][random.randint(0, 7)] = random.randint(0, 1)
+        offsprings[0][random.randint(0, 7)] = random.randint(0, 9)
+        offsprings[1][random.randint(0, 7)] = random.randint(0, 9)
 
     return offsprings
 
@@ -94,13 +94,13 @@ def print_result(pop, pop_size, iteration):
 
 def main():
     # hyper paramaters
-    pop_size, tour_size, generation, recom_prob, mut_prob = (44, 7, 100, 0.6, 0.09)
+    pop_size, tour_size, generation, recom_prob, mut_prob = (45, 5, 120, 0.6, 0.09)
 
     iteration = 0
     population = generate_population(pop_size)
     fitness = evaluate(population, pop_size)
 
-    while(iteration < generation and max(fitness) < 2.3):
+    while(iteration < generation and max(fitness) < 2.48):
         fitness = evaluate(population, pop_size)
         
         new_population = []
@@ -124,25 +124,25 @@ def main():
     print_result(population, pop_size, iteration)
     
     # Test 1
-    # Best Chromosome         : [1, 0, 1, 0, 1, 1, 1, 1]
-    # Best fitness            : 2.3679814656314297
-    # Decoded X Value         : 0.9166666666666665
-    # Decoded Y Value         : 0.9374999999999998
-    # Total Generation        : 2
+    # Best Chromosome         : [5, 9, 8, 9, 9, 9, 8, 9]
+    # Best fitness            : 2.470359658701354
+    # Decoded X Value         : 0.7967598959895987
+    # Decoded Y Value         : 0.9978998999899986
+    # Total Generation        : 22
 
     # Test 2
-    # Best Chromosome         : [1, 0, 1, 1, 1, 1, 1, 1]
-    # Best fitness            : 2.3043691294923527
-    # Decoded X Value         : 1.1083333333333334
-    # Decoded Y Value         : 0.9374999999999998
-    # Total Generation        : 0
+    # Best Chromosome         : [6, 1, 0, 8, 9, 9, 7, 8]
+    # Best fitness            : 2.4719457188753893
+    # Decoded X Value         : 0.832461086108611
+    # Decoded Y Value         : 0.9956997899789977
+    # Total Generation        : 8
 
     # Test 3
-    # Best Chromosome         : [1, 0, 1, 0, 1, 1, 1, 1]
-    # Best fitness            : 2.3679814656314297
-    # Decoded X Value         : 0.9166666666666665
-    # Decoded Y Value         : 0.9374999999999998
-    # Total Generation        : 8
+    # Best Chromosome         : [6, 2, 3, 4, 9, 9, 9, 9]
+    # Best fitness            : 2.4815425810712606
+    # Decoded X Value         : 0.8702623462346235
+    # Decoded Y Value         : 0.9998999999999998
+    # Total Generation        : 64
     
 main()
 
