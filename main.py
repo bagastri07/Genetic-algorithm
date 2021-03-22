@@ -94,7 +94,7 @@ def print_result(pop, pop_size, iteration):
 
 def main():
     # hyper paramaters
-    pop_size, tour_size, generation, recom_prob, mut_prob = (45, 5, 120, 0.6, 0.09)
+    pop_size, tour_size, generation, recom_prob, mut_prob = (50, 5, 120, 0.6, 0.09)
 
     iteration = 0
     population = generate_population(pop_size)
@@ -124,25 +124,25 @@ def main():
     print_result(population, pop_size, iteration)
     
     # Test 1
-    # Best Chromosome         : [5, 9, 8, 9, 9, 9, 8, 9]
-    # Best fitness            : 2.470359658701354
-    # Decoded X Value         : 0.7967598959895987
-    # Decoded Y Value         : 0.9978998999899986
-    # Total Generation        : 22
+    # Best Chromosome         : [6, 2, 3, 8, 9, 9, 9, 5]
+    # Best fitness            : 2.480105475185494
+    # Decoded X Value         : 0.8714623862386242
+    # Decoded Y Value         : 0.9990999599959991
+    # Total Generation        : 14
 
     # Test 2
-    # Best Chromosome         : [6, 1, 0, 8, 9, 9, 7, 8]
-    # Best fitness            : 2.4719457188753893
-    # Decoded X Value         : 0.832461086108611
-    # Decoded Y Value         : 0.9956997899789977
-    # Total Generation        : 8
+    # Best Chromosome         : [6, 2, 2, 9, 9, 9, 9, 9]
+    # Best fitness            : 2.4815482828907784
+    # Decoded X Value         : 0.8687622962296231
+    # Decoded Y Value         : 0.9998999999999998
+    # Total Generation        : 41
 
     # Test 3
-    # Best Chromosome         : [6, 2, 3, 4, 9, 9, 9, 9]
-    # Best fitness            : 2.4815425810712606
-    # Decoded X Value         : 0.8702623462346235
+    # Best Chromosome         : [5, 9, 9, 9, 9, 9, 9, 9]
+    # Best fitness            : 2.4747064877314284
+    # Decoded X Value         : 0.7997599959995998
     # Decoded Y Value         : 0.9998999999999998
-    # Total Generation        : 64
+    # Total Generation        : 120
     
 main()
 
