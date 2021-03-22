@@ -93,8 +93,9 @@ def print_result(pop, pop_size, iteration):
     print('Decoded Y Value         :', decoded_value[1])
     print('Total Generation        :', iteration)
     print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
+    print()
 
-def main():
+def genetic_algorithm():
     # hyper paramaters
     pop_size, tour_size, generation, recom_prob, mut_prob = (50, 5, 200, 0.6, 0.09)
 
@@ -124,27 +125,69 @@ def main():
         iteration+=1
 
     print_result(population, pop_size, iteration)
-    
-    # Test 1
-    # Best Chromosome         : [6, 2, 3, 8, 9, 9, 9, 5]
-    # Best fitness            : 2.480105475185494
-    # Decoded X Value         : 0.8714623862386242
-    # Decoded Y Value         : 0.9990999599959991
-    # Total Generation        : 14
 
-    # Test 2
-    # Best Chromosome         : [6, 2, 2, 9, 9, 9, 9, 9]
-    # Best fitness            : 2.4815482828907784
-    # Decoded X Value         : 0.8687622962296231
-    # Decoded Y Value         : 0.9998999999999998
-    # Total Generation        : 41
+def main():
+    for i in range(4):
+        print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
+        print('                 *Experiment *', i+1)
+        print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
+        print()
+        genetic_algorithm()
 
-    # Test 3
-    # Best Chromosome         : [5, 9, 9, 9, 9, 9, 9, 9]
-    # Best fitness            : 2.4747064877314284
-    # Decoded X Value         : 0.7997599959995998
-    # Decoded Y Value         : 0.9998999999999998
-    # Total Generation        : 120
-    
 main()
 
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    #                  *Experiment * 1
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    #     *The Result of Maximizing the Function*
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    # Best Chromosome         : [6, 2, 2, 1, 9, 9, 9, 9]
+    # Best fitness            : 2.4815433549205492
+    # Decoded X Value         : 0.8663622162216222
+    # Decoded Y Value         : 0.9998999999999998
+    # Total Generation        : 17
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    #                  *Experiment * 2
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    #     *The Result of Maximizing the Function*
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    # Best Chromosome         : [6, 2, 3, 0, 9, 9, 9, 9]
+    # Best fitness            : 2.4815476834911614
+    # Decoded X Value         : 0.8690623062306233
+    # Decoded Y Value         : 0.9998999999999998
+    # Total Generation        : 27
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    #                  *Experiment * 3
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    #     *The Result of Maximizing the Function*
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    # Best Chromosome         : [6, 2, 6, 6, 9, 9, 9, 9]
+    # Best fitness            : 2.4813453303397166
+    # Decoded X Value         : 0.8798626662666269
+    # Decoded Y Value         : 0.9998999999999998
+    # Total Generation        : 20
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    #                  *Experiment * 4
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    #     *The Result of Maximizing the Function*
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    # Best Chromosome         : [6, 2, 9, 9, 9, 9, 9, 9]
+    # Best fitness            : 2.4808485128899522
+    # Decoded X Value         : 0.8897629962996301
+    # Decoded Y Value         : 0.9998999999999998
+    # Total Generation        : 40
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
