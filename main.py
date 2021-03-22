@@ -125,21 +125,24 @@ def main():
     
     # Test 1
     # Best Chromosome         : [1, 0, 1, 0, 1, 1, 1, 1]
-    # Best fitness            : 2.2798718011868155
-    # Decoded Value           : [0.9166666666666665, 0.9374999999999998]
+    # Best fitness            : 2.3679814656314297
+    # Decoded X Value         : 0.9166666666666665
+    # Decoded Y Value         : 0.9374999999999998
     # Total Generation        : 2
 
     # Test 2
-    # Best Chromosome         : [1, 0, 1, 0, 1, 1, 1, 1]
-    # Best fitness            : 2.2798718011868155
-    # Decoded Value           : [0.9166666666666665, 0.9374999999999998]
-    # Total Generation        : 4
+    # Best Chromosome         : [1, 0, 1, 1, 1, 1, 1, 1]
+    # Best fitness            : 2.3043691294923527
+    # Decoded X Value         : 1.1083333333333334
+    # Decoded Y Value         : 0.9374999999999998
+    # Total Generation        : 0
 
     # Test 3
-    # Best Chromosome         : [1, 0, 1, 1, 1, 1, 1, 1]
-    # Best fitness            : 2.260035057580861
-    # Decoded Value           : [1.1083333333333334, 0.9374999999999998]
-    # Total Generation        : 55
+    # Best Chromosome         : [1, 0, 1, 0, 1, 1, 1, 1]
+    # Best fitness            : 2.3679814656314297
+    # Decoded X Value         : 0.9166666666666665
+    # Decoded Y Value         : 0.9374999999999998
+    # Total Generation        : 8
     
 main()
 
