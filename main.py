@@ -94,7 +94,7 @@ def print_result(pop, pop_size, iteration):
 
 def main():
     # hyper paramaters
-    pop_size, tour_size, generation, recom_prob, mut_prob = (50, 5, 120, 0.6, 0.09)
+    pop_size, tour_size, generation, recom_prob, mut_prob = (50, 5, 200, 0.6, 0.09)
 
     iteration = 0
     population = generate_population(pop_size)
