@@ -84,13 +84,15 @@ def print_result(pop, pop_size, iteration):
     result_index = elitisme(fitness)
     decoded_value = decode_chromosome(pop[result_index[0]])
 
-    print('The Result of Maximizing the Function:')
-    print()
+    print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
+    print('    *The Result of Maximizing the Function*')
+    print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
     print('Best Chromosome         :', pop[result_index[0]])
     print('Best fitness            :', count_fitness(pop[result_index[0]]))
     print('Decoded X Value         :', decoded_value[0])
     print('Decoded Y Value         :', decoded_value[1])
     print('Total Generation        :', iteration)
+    print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
 
 def main():
     # hyper paramaters
@@ -118,7 +120,7 @@ def main():
             offsprings = recombination(copy_parrent_a, copy_parrent_b, recom_prob)
             offsprings = mutation(offsprings, mut_prob)
             new_population.extend(offsprings)
-        population = new_population
+        population = new_population.copy()
         iteration+=1
 
     print_result(population, pop_size, iteration)
