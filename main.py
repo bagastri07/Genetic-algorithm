@@ -95,7 +95,7 @@ def print_result(pop, pop_size, iteration):
     print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
     print()
 
-def genetic_algorithm():
+def general_replacement():
     # hyper paramaters
     pop_size, tour_size, generation, recom_prob, mut_prob = (50, 5, 200, 0.6, 0.09)
 
@@ -103,7 +103,7 @@ def genetic_algorithm():
     population = generate_population(pop_size)
     fitness = evaluate(population, pop_size)
 
-    while(iteration < generation and max(fitness) < 2.48):
+    while(iteration < generation and max(fitness) < 2.47):
         fitness = evaluate(population, pop_size)
         
         new_population = []
@@ -126,15 +126,15 @@ def genetic_algorithm():
 
     print_result(population, pop_size, iteration)
 
-def main():
-    for i in range(4):
+def call_looping(n):
+    for i in range(n):
         print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
         print('                 *Experiment *', i+1)
         print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
         print()
-        genetic_algorithm()
+        general_replacement()
 
-main()
+call_looping(4)
 
     # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     #                  *Experiment * 1
