@@ -95,7 +95,7 @@ def print_result(pop, pop_size, iteration):
     print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
     print()
 
-def generation_replacement():
+def generational_replacement():
     # hyper paramaters
     pop_size, tour_size, generation, recom_prob, mut_prob = (70, 4, 120, 0.7, 0.05)
 
@@ -130,7 +130,7 @@ def call_looping(n):
     for i in range(n):
         print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
         print('                 *Experiment *', i+1)
-        generation_replacement()
+        generational_replacement()
 
 call_looping(4)
 
