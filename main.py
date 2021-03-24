@@ -13,7 +13,7 @@ def generate_population(pop_size):
     # empty array of pop
     pop = []
     for _ in range(pop_size):
-        pop.append(generate_chromosome(8))
+        pop.append(generate_chromosome(10))
     return pop
 
 def decode_chromosome(chrom):
@@ -130,8 +130,6 @@ def call_looping(n):
     for i in range(n):
         print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
         print('                 *Experiment *', i+1)
-        print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
-        print()
         generation_replacement()
 
 call_looping(4)
