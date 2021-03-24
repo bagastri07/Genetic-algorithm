@@ -103,7 +103,7 @@ def generation_replacement():
     population = generate_population(pop_size)
     fitness = evaluate(population, pop_size)
 
-    while(iteration < generation and max(fitness) < 2.478):
+    while(iteration < generation and max(fitness) < 2.48):
         fitness = evaluate(population, pop_size)
         
         new_population = []
