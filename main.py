@@ -95,15 +95,15 @@ def print_result(pop, pop_size, iteration):
     print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
     print()
 
-def general_replacement():
+def generation_replacement():
     # hyper paramaters
-    pop_size, tour_size, generation, recom_prob, mut_prob = (50, 5, 200, 0.6, 0.09)
+    pop_size, tour_size, generation, recom_prob, mut_prob = (70, 4, 120, 0.7, 0.05)
 
     iteration = 0
     population = generate_population(pop_size)
     fitness = evaluate(population, pop_size)
 
-    while(iteration < generation and max(fitness) < 2.47):
+    while(iteration < generation and max(fitness) < 2.478):
         fitness = evaluate(population, pop_size)
         
         new_population = []
@@ -132,7 +132,7 @@ def call_looping(n):
         print('                 *Experiment *', i+1)
         print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
         print()
-        general_replacement()
+        generation_replacement()
 
 call_looping(4)
 
