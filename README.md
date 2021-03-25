@@ -8,18 +8,8 @@ Analysis, design, and implementation of the Genetialgorithm (GA) algorithm into 
 * Martin Hutapea (1301190380)  
 IF-43-04  
 School of Computing, Telkom University  
-### Result
-After after running three trials of the program. We got:
->**Test 1**  
->Result: 
->Best Chromosome         : [1, 0, 1, 0, 1, 1, 1, 1]  
->Best fitness            : 2.2798718011868155  
->Decoded Value           : [0.9166666666666665, 0.9374999999999998]  
->**Test 2**  
->Best Chromosome         : [1, 0, 1, 0, 1, 1, 1, 1]  
->Best fitness            : 2.2798718011868155  
->Decoded Value           : [0.9166666666666665, 0.9374999999999998]  
->**Test 3**  
->Best Chromosome         : [1, 0, 1, 0, 1, 1, 1, 1]  
->Best fitness            : 2.2798718011868155  
->Decoded Value           : [0.9166666666666665, 0.9374999999999998]  
+### Link
+* Report:https://drive.google.com/file/d/16VoyZkM7KSfRWo3RZWQv5EuBm2j660ZJ/view?usp=sharing
+* Slide : https://docs.google.com/presentation/d/1H5agpJPYzp76HaLKlP--hx5lWeirCReZdZS2I6QZi-A/edit?usp=sharing
+* Youtube : https://youtu.be/ncrl-0zhcLw
+
